@@ -1,0 +1,1912 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.09836261240548182 0.28798076716342286 0.9525711911582962 0.688599826437425
+  position -7.729212896140446 -7.317601084322876 2.8604302178500007
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Robot {
+  translation -0.0013663473508009807 -0.0001070222462923289 0.5976805505488394
+  rotation 0.025035778952400067 -0.9996865141927885 0.0002882938051672687 0.0010839506407076171
+  children [
+    DEF base_visual CadShape {
+      url [
+        "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/base.dae"
+      ]
+    }
+    Solid {
+      name "base_inertia"
+      physics Physics {
+        density -1
+        mass 6.222
+        centerOfMass [
+          -0.018 -0.002 0.024
+        ]
+        inertiaMatrix [
+          0.01793881 0.3708877 0.3724977
+          0.00387963 0.001500772 6.8963e-05
+        ]
+      }
+    }
+    Solid {
+      children [
+        DEF top_shell_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/top_shell.dae"
+          ]
+        }
+      ]
+      name "top_shell"
+      physics Physics {
+        density -1
+        mass 0.534
+        centerOfMass [
+          -0.00777 -0.00013 0.06523
+        ]
+        inertiaMatrix [
+          0.006647895 0.02587392 0.03152304
+          1.247923e-05 0.000539901 3.7614e-07
+        ]
+      }
+    }
+    Solid {
+      children [
+        DEF bottom_shell_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/bottom_shell.dae"
+          ]
+        }
+      ]
+      name "bottom_shell"
+      physics Physics {
+        density -1
+        mass 1.15
+        centerOfMass [
+          -0.00333 1e-05 -0.07705
+        ]
+        inertiaMatrix [
+          0.009273537 0.06134388 0.06853531
+          5.41222e-06 9.039821e-05 2.3042e-07
+        ]
+      }
+    }
+    Solid {
+      children [
+        DEF remote_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/remote.dae"
+          ]
+        }
+      ]
+      name "remote"
+      physics Physics {
+        density -1
+        mass 0.3262
+        centerOfMass [
+          -0.171 0.002 0.096
+        ]
+        inertiaMatrix [
+          0.000528486 0.001165035 0.00124026
+          4.547e-05 1.10327e-05 7.4e-07
+        ]
+      }
+    }
+    Solid {
+      children [
+        DEF handle_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/handle.dae"
+          ]
+        }
+      ]
+      name "handle"
+      physics Physics {
+        density -1
+        mass 0.314
+        centerOfMass [
+          0.37801 0 0.1372
+        ]
+        inertiaMatrix [
+          0.001525739 0.00071584 0.001164779
+          0 6.272e-05 1e-09
+        ]
+      }
+    }
+    Solid {
+      translation 0.4145 0 0
+      children [
+        DEF face_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/face.dae"
+          ]
+        }
+        Solid {
+          translation 0.04715 0 -0.0292
+          rotation 0 1 0 0.523599
+          children [
+            DEF depth_camera_visual CadShape {
+              url [
+                "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/depth_camera.dae"
+              ]
+            }
+          ]
+          name "depth_camera_front_camera"
+          physics Physics {
+            density -1
+            mass 0.16043
+            centerOfMass [
+              -0.021 -0.002 0.025
+            ]
+            inertiaMatrix [
+              0.000637051 0.000929402 0.000484569
+              0.000484569 0.000424211 5.138e-06
+            ]
+          }
+        }
+        Solid {
+          translation 0.0985 0 0.01497
+          children [
+            DEF wide_angle_camera_visual CadShape {
+              url [
+                "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/wide_angle_camera.dae"
+              ]
+            }
+          ]
+          name "wide_angle_camera_front_camera"
+          physics Physics {
+            density -1
+            mass 0.287
+            centerOfMass [
+              -0.053 -0.001 0.025
+            ]
+            inertiaMatrix [
+              0.000559232 0.000946504 0.000493052
+              1.6875e-05 0.000423761 1.3234e-07
+            ]
+          }
+        }
+      ]
+      name "face_front"
+      boundingObject Group {
+        children [
+          Pose {
+            translation 0.055 0 0
+            children [
+              Box {
+                size 0.11 0.14 0.18
+              }
+            ]
+          }
+          Pose {
+            translation 0.055 0.07 0
+            rotation 0 1 0 1.570796
+            children [
+              Cylinder {
+                height 0.11
+                radius 0.09
+              }
+            ]
+          }
+          Pose {
+            translation 0.055 -0.07 0
+            rotation 0 1 0 1.570796
+            children [
+              Cylinder {
+                height 0.11
+                radius 0.09
+              }
+            ]
+          }
+        ]
+      }
+      physics Physics {
+        density -1
+        mass 0.73
+        centerOfMass [
+          0.042 -0.001 0.004
+        ]
+        inertiaMatrix [
+          0.005238611 0.002643098 0.004325938
+          1.7609e-05 7.2167e-05 1.9548e-05
+        ]
+      }
+    }
+    Solid {
+      translation -0.4145 0 0
+      rotation 0 0 1 3.141593
+      children [
+        USE face_visual
+        Solid {
+          translation 0.04715 0 -0.0292
+          rotation 0 1 0 0.523599
+          children [
+            USE depth_camera_visual
+          ]
+          name "depth_camera_rear_camera"
+          physics Physics {
+            density -1
+            mass 0.16043
+            centerOfMass [
+              -0.021 -0.002 0.025
+            ]
+            inertiaMatrix [
+              0.000637051 0.000929402 0.000484569
+              0.000484569 0.000424211 5.138e-06
+            ]
+          }
+        }
+        Solid {
+          translation 0.0985 0 0.01497
+          children [
+            USE wide_angle_camera_visual
+          ]
+          name "wide_angle_camera_rear_camera"
+          physics Physics {
+            density -1
+            mass 0.287
+            centerOfMass [
+              -0.053 -0.001 0.025
+            ]
+            inertiaMatrix [
+              0.000559232 0.000946504 0.000493052
+              1.6875e-05 0.000423761 1.3234e-07
+            ]
+          }
+        }
+      ]
+      name "face_rear"
+      boundingObject Group {
+        children [
+          Pose {
+            translation 0.055 0 0
+            children [
+              Box {
+                size 0.11 0.14 0.18
+              }
+            ]
+          }
+          Pose {
+            translation 0.055 0.07 0
+            rotation 0 1 0 1.570796
+            children [
+              Cylinder {
+                height 0.11
+                radius 0.09
+              }
+            ]
+          }
+          Pose {
+            translation 0.055 -0.07 0
+            rotation 0 1 0 1.570796
+            children [
+              Cylinder {
+                height 0.11
+                radius 0.09
+              }
+            ]
+          }
+        ]
+      }
+      physics Physics {
+        density -1
+        mass 0.73
+        centerOfMass [
+          0.042 -0.001 0.004
+        ]
+        inertiaMatrix [
+          0.005238611 0.002643098 0.004325938
+          1.7609e-05 7.2167e-05 1.9548e-05
+        ]
+      }
+    }
+    Solid {
+      children [
+        DEF battery_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/battery.dae"
+          ]
+        }
+      ]
+      name "battery"
+      physics Physics {
+        density -1
+        mass 5.53425
+        centerOfMass [
+          -0.00067 -0.00023 -0.03362
+        ]
+        inertiaMatrix [
+          0.007494748 0.07223389 0.07482718
+          0.0001668628 7.82763e-05 1.42902e-06
+        ]
+      }
+    }
+    Solid {
+      translation 0.343 0 -0.07
+      name "docking_hatch_cover"
+      physics Physics {
+        density -1
+        mass 0.065
+        centerOfMass [
+          -0.003 0 0.005
+        ]
+        inertiaMatrix [
+          0.00063283 0.00110971 0.00171883
+          0 3.45e-07 0
+        ]
+      }
+    }
+    Solid {
+      translation 0.2488 0.00835 0.04628
+      rotation 0 0 1 1.570796
+      children [
+        Pose {
+          translation 0 0 0.005
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.5 0.5 0.5
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.024 0.024 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "imu_link"
+      boundingObject Pose {
+        translation 0 0 0.005
+        children [
+          Box {
+            size 0.024 0.024 0.01
+          }
+        ]
+      }
+      physics Physics {
+        density -1
+        mass 0.01
+        centerOfMass [
+          0 0 0
+        ]
+        inertiaMatrix [
+          5.633333e-07 9.6e-07 5.633333e-07
+          0 0 0
+        ]
+      }
+    }
+    Solid {
+      translation 0 0.07646 0.02905
+      rotation -0.25056300542381216 0.25056300542381216 0.9351130202419243 1.637834
+      children [
+        USE depth_camera_visual
+      ]
+      name "depth_camera_left_camera"
+      physics Physics {
+        density -1
+        mass 0.16043
+        centerOfMass [
+          -0.021 -0.002 0.025
+        ]
+        inertiaMatrix [
+          0.000637051 0.000929402 0.000484569
+          0.000484569 0.000424211 5.138e-06
+        ]
+      }
+    }
+    Solid {
+      translation 0 -0.07646 0.02905
+      rotation 0.25056300542381216 0.25056300542381216 -0.9351130202419243 1.637834
+      children [
+        USE depth_camera_visual
+      ]
+      name "depth_camera_right_camera"
+      physics Physics {
+        density -1
+        mass 0.16043
+        centerOfMass [
+          -0.021 -0.002 0.025
+        ]
+        inertiaMatrix [
+          0.000637051 0.000929402 0.000484569
+          0.000484569 0.000424211 5.138e-06
+        ]
+      }
+    }
+    Solid {
+      translation -0.364 0 0.0735
+      children [
+        DEF lidar_cage_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/lidar_cage.dae"
+          ]
+        }
+        Solid {
+          translation 0 0 0.0687
+          rotation 0 0 -1 1.570796
+          children [
+            DEF lidar_visual CadShape {
+              url [
+                "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/lidar.dae"
+              ]
+            }
+          ]
+          name "lidar"
+          physics Physics {
+            density -1
+            mass 0.695
+            centerOfMass [
+              -0.012 0.001 -0.008
+            ]
+            inertiaMatrix [
+              0.000846765 0.001367583 0.001363673
+              6.9565e-05 0.00027111 5.8984e-05
+            ]
+          }
+        }
+      ]
+      name "lidar_cage"
+      boundingObject Pose {
+        translation 0 0 0.06
+        children [
+          Cylinder {
+            height 0.12
+            radius 0.07
+          }
+        ]
+      }
+      physics Physics {
+        density -1
+        mass 0.545
+        centerOfMass [
+          0.002 0 0.099
+        ]
+        inertiaMatrix [
+          0.003156254 0.002357216 0.001326455
+          0 1.0992e-05 0
+        ]
+      }
+    }
+    Solid {
+      translation 0.2999 0.104 0
+      rotation 1 0 0 2.617994
+      children [
+        DEF drive_visual CadShape {
+          url [
+            "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/drive.dae"
+          ]
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 3.89537929712563e-05
+          }
+          device [
+            RotationalMotor {
+              name "LF_HAA"
+              maxVelocity 7.5
+              minPosition -0.72
+              maxPosition 0.49
+              maxTorque 80
+            }
+            PositionSensor {
+              name "LF_HAA_sensor"
+            }
+          ]
+          endPoint Solid {
+            rotation 1 0 0 3.895379009857207e-05
+            children [
+              Solid {
+                rotation -1 0 0 2.617994
+                children [
+                  DEF hip_l_visual CadShape {
+                    url [
+                      "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/hip_l.dae"
+                    ]
+                  }
+                  Solid {
+                    translation 0.0599 0.08381 0
+                    rotation 0 0 1 1.570796
+                    children [
+                      USE drive_visual
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position -3.268099193753926e-05
+                        }
+                        device [
+                          RotationalMotor {
+                            name "LF_HFE"
+                            maxVelocity 7.5
+                            minPosition -9.42477796077
+                            maxPosition 9.42477796077
+                            maxTorque 80
+                          }
+                          PositionSensor {
+                            name "LF_HFE_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          rotation -1 0 0 3.2680988115585514e-05
+                          children [
+                            Solid {
+                              rotation 0 0 -1 1.570796
+                              children [
+                                DEF thigh_visual CadShape {
+                                  url [
+                                    "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/thigh.dae"
+                                  ]
+                                }
+                                Solid {
+                                  translation 0 0.1003 -0.285
+                                  rotation 0 0 1 1.570796
+                                  children [
+                                    USE drive_visual
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        position -1.6633652708542e-05
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "LF_KFE"
+                                          maxVelocity 7.5
+                                          minPosition -9.42477796077
+                                          maxPosition 9.42477796077
+                                          maxTorque 80
+                                        }
+                                        PositionSensor {
+                                          name "LF_KFE_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        rotation -1 0 0 1.6633647702149406e-05
+                                        children [
+                                          Solid {
+                                            rotation 0 0 -1 1.570796
+                                            children [
+                                              DEF shank_l_visual CadShape {
+                                                url [
+                                                  "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/shank_l.dae"
+                                                ]
+                                              }
+                                              Solid {
+                                                translation 0.08795 0.01305 -0.33797
+                                                children [
+                                                  Pose {
+                                                    rotation 0 0 -1 0.785398
+                                                    children [
+                                                      DEF foot_visual CadShape {
+                                                        url [
+                                                          "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/foot.dae"
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                                name "LF_FOOT"
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0 0 0.168985
+                                                      children [
+                                                        Cylinder {
+                                                          height 0.282504
+                                                          radius 0.0175
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0 0 0.0225
+                                                      children [
+                                                        Sphere {
+                                                          radius 0.03
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.25
+                                                  centerOfMass [
+                                                    0.00948 -0.00948 0.1468
+                                                  ]
+                                                  inertiaMatrix [
+                                                    0.003171741 0.003171741 8.319196e-05
+                                                    2.63048e-06 6.815581e-05 6.815583e-05
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                            name "LF_shank_fixed"
+                                            boundingObject Group {
+                                              children [
+                                                Pose {
+                                                  translation 0 0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Cylinder {
+                                                      height 0.04
+                                                      radius 0.06
+                                                    }
+                                                  ]
+                                                }
+                                                Pose {
+                                                  translation 0.057499 0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Box {
+                                                      size 0.114998 0.0675 0.04
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                            physics Physics {
+                                              density -1
+                                              mass 0.33742
+                                              centerOfMass [
+                                                0.03463 0.00688 0.00098
+                                              ]
+                                              inertiaMatrix [
+                                                0.0003274801 0.001109741 0.0008938852
+                                                2.142561e-05 1.33942e-05 7.601e-08
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                        name "LF_SHANK"
+                                        physics Physics {
+                                          density -1
+                                          mass 0.001
+                                          centerOfMass [
+                                            0 0 0
+                                          ]
+                                          inertiaMatrix [
+                                            1e-06 1e-06 1e-06
+                                            0 0 0
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "LF_KFE"
+                                  boundingObject Pose {
+                                    translation -0.07 0 0
+                                    rotation 0 1 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.14
+                                        radius 0.05
+                                      }
+                                    ]
+                                  }
+                                  physics Physics {
+                                    density -1
+                                    mass 2.04
+                                    centerOfMass [
+                                      -0.063 7e-05 0.00046
+                                    ]
+                                    inertiaMatrix [
+                                      0.001053013 0.001805509 0.001765827
+                                      4.527e-05 8.855e-05 9.909e-05
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "LF_thigh_fixed"
+                              boundingObject Group {
+                                children [
+                                  Pose {
+                                    translation 0 0.04 0
+                                    rotation 1 0 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.08
+                                        radius 0.065
+                                      }
+                                    ]
+                                  }
+                                  Pose {
+                                    translation 0 0.03 -0.141314
+                                    children [
+                                      Box {
+                                        size 0.075 0.06 0.282627
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 1.03
+                                centerOfMass [
+                                  0 0.018 -0.169
+                                ]
+                                inertiaMatrix [
+                                  0.01864447 0.0193126 0.002838361
+                                  5.2e-08 1.0157e-05 0.002520077
+                                ]
+                              }
+                            }
+                          ]
+                          name "LF_THIGH"
+                          physics Physics {
+                            density -1
+                            mass 0.001
+                            centerOfMass [
+                              0 0 0
+                            ]
+                            inertiaMatrix [
+                              1e-06 1e-06 1e-06
+                              0 0 0
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "LF_HFE"
+                    boundingObject Pose {
+                      translation -0.07 0 0
+                      rotation 0 1 0 1.570796
+                      children [
+                        Cylinder {
+                          height 0.14
+                          radius 0.05
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 2.04
+                      centerOfMass [
+                        -0.063 7e-05 0.00046
+                      ]
+                      inertiaMatrix [
+                        0.001053013 0.001805509 0.001765827
+                        4.527e-05 8.855e-05 9.909e-05
+                      ]
+                    }
+                  }
+                ]
+                name "LF_hip_fixed"
+                physics Physics {
+                  density -1
+                  mass 0.74
+                  centerOfMass [
+                    0.048 0.008 -0.003
+                  ]
+                  inertiaMatrix [
+                    0.001393106 0.003798579 0.003897509
+                    8.4012e-05 2.3378e-05 7.1319e-05
+                  ]
+                }
+              }
+            ]
+            name "LF_HIP"
+            physics Physics {
+              density -1
+              mass 0.001
+              centerOfMass [
+                0 0 0
+              ]
+              inertiaMatrix [
+                1e-06 1e-06 1e-06
+                0 0 0
+              ]
+            }
+          }
+        }
+      ]
+      name "LF_HAA"
+      physics Physics {
+        density -1
+        mass 2.04
+        centerOfMass [
+          -0.063 7e-05 0.00046
+        ]
+        inertiaMatrix [
+          0.001053013 0.001805509 0.001765827
+          4.527e-05 8.855e-05 9.909e-05
+        ]
+      }
+    }
+    Solid {
+      translation 0.2999 -0.104 0
+      rotation -1 0 0 2.617994
+      children [
+        USE drive_visual
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position -3.9376136700380206e-05
+          }
+          device [
+            RotationalMotor {
+              name "RF_HAA"
+              maxVelocity 7.5
+              minPosition -0.49
+              maxPosition 0.72
+              maxTorque 80
+            }
+            PositionSensor {
+              name "RF_HAA_sensor"
+            }
+          ]
+          endPoint Solid {
+            rotation -1 0 0 3.937613166176048e-05
+            children [
+              Solid {
+                rotation 1 0 0 2.617994
+                children [
+                  DEF hip_r_visual CadShape {
+                    url [
+                      "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/hip_r.dae"
+                    ]
+                  }
+                  Solid {
+                    translation 0.0599 -0.08381 0
+                    rotation 0 0 -1 1.570796
+                    children [
+                      USE drive_visual
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position -3.2626084563780466e-05
+                          axis -1 0 0
+                        }
+                        device [
+                          RotationalMotor {
+                            name "RF_HFE"
+                            maxVelocity 7.5
+                            minPosition -9.42477796077
+                            maxPosition 9.42477796077
+                            maxTorque 80
+                          }
+                          PositionSensor {
+                            name "RF_HFE_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          rotation 1 0 0 3.262608477783617e-05
+                          children [
+                            Solid {
+                              rotation 0 0 1 1.570796
+                              children [
+                                Pose {
+                                  rotation 0 0 -1 3.141593
+                                  children [
+                                    USE thigh_visual
+                                  ]
+                                }
+                                Solid {
+                                  translation 0 -0.1003 -0.285
+                                  rotation 0 0 -1 1.570796
+                                  children [
+                                    USE drive_visual
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        position -1.6624713510715594e-05
+                                        axis -1 0 0
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "RF_KFE"
+                                          maxVelocity 7.5
+                                          minPosition -9.42477796077
+                                          maxPosition 9.42477796077
+                                          maxTorque 80
+                                        }
+                                        PositionSensor {
+                                          name "RF_KFE_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        rotation 0.9999999999999999 0 0 1.662470138404348e-05
+                                        children [
+                                          Solid {
+                                            rotation 0 0 1 1.570796
+                                            children [
+                                              DEF shank_r_visual CadShape {
+                                                url [
+                                                  "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/shank_r.dae"
+                                                ]
+                                              }
+                                              Solid {
+                                                translation 0.08795 -0.01305 -0.33797
+                                                children [
+                                                  Pose {
+                                                    rotation 0 0 1 0.785398
+                                                    children [
+                                                      USE foot_visual
+                                                    ]
+                                                  }
+                                                ]
+                                                name "RF_FOOT"
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0 0 0.168985
+                                                      children [
+                                                        Cylinder {
+                                                          height 0.282504
+                                                          radius 0.0175
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0 0 0.0225
+                                                      children [
+                                                        Sphere {
+                                                          radius 0.03
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.25
+                                                  centerOfMass [
+                                                    0.00948 0.00948 0.1468
+                                                  ]
+                                                  inertiaMatrix [
+                                                    0.003171741 0.003171741 8.319196e-05
+                                                    -2.63048e-06 6.815581e-05 -6.815583e-05
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                            name "RF_shank_fixed"
+                                            boundingObject Group {
+                                              children [
+                                                Pose {
+                                                  translation 0 -0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Cylinder {
+                                                      height 0.04
+                                                      radius 0.06
+                                                    }
+                                                  ]
+                                                }
+                                                Pose {
+                                                  translation 0.057499 -0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Box {
+                                                      size 0.114998 0.0675 0.04
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                            physics Physics {
+                                              density -1
+                                              mass 0.33742
+                                              centerOfMass [
+                                                0.03463 -0.00688 0.00098
+                                              ]
+                                              inertiaMatrix [
+                                                0.0003274801 0.001109741 0.0008938852
+                                                -2.142561e-05 1.33942e-05 -7.601e-08
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                        name "RF_SHANK"
+                                        physics Physics {
+                                          density -1
+                                          mass 0.001
+                                          centerOfMass [
+                                            0 0 0
+                                          ]
+                                          inertiaMatrix [
+                                            1e-06 1e-06 1e-06
+                                            0 0 0
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "RF_KFE"
+                                  boundingObject Pose {
+                                    translation -0.07 0 0
+                                    rotation 0 1 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.14
+                                        radius 0.05
+                                      }
+                                    ]
+                                  }
+                                  physics Physics {
+                                    density -1
+                                    mass 2.04
+                                    centerOfMass [
+                                      -0.063 7e-05 0.00046
+                                    ]
+                                    inertiaMatrix [
+                                      0.001053013 0.001805509 0.001765827
+                                      4.527e-05 8.855e-05 9.909e-05
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "RF_thigh_fixed"
+                              boundingObject Group {
+                                children [
+                                  Pose {
+                                    translation 0 -0.04 0
+                                    rotation 1 0 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.08
+                                        radius 0.065
+                                      }
+                                    ]
+                                  }
+                                  Pose {
+                                    translation 0 -0.03 -0.141314
+                                    children [
+                                      Box {
+                                        size 0.075 0.06 0.282627
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 1.03
+                                centerOfMass [
+                                  0 -0.018 -0.169
+                                ]
+                                inertiaMatrix [
+                                  0.01864447 0.0193126 0.002838361
+                                  -5.2e-08 1.0157e-05 -0.002520077
+                                ]
+                              }
+                            }
+                          ]
+                          name "RF_THIGH"
+                          physics Physics {
+                            density -1
+                            mass 0.001
+                            centerOfMass [
+                              0 0 0
+                            ]
+                            inertiaMatrix [
+                              1e-06 1e-06 1e-06
+                              0 0 0
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "RF_HFE"
+                    boundingObject Pose {
+                      translation -0.07 0 0
+                      rotation 0 1 0 1.570796
+                      children [
+                        Cylinder {
+                          height 0.14
+                          radius 0.05
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 2.04
+                      centerOfMass [
+                        -0.063 7e-05 0.00046
+                      ]
+                      inertiaMatrix [
+                        0.001053013 0.001805509 0.001765827
+                        4.527e-05 8.855e-05 9.909e-05
+                      ]
+                    }
+                  }
+                ]
+                name "RF_hip_fixed"
+                physics Physics {
+                  density -1
+                  mass 0.74
+                  centerOfMass [
+                    0.048 -0.008 -0.003
+                  ]
+                  inertiaMatrix [
+                    0.001393106 0.003798579 0.003897509
+                    -8.4012e-05 2.3378e-05 -7.1319e-05
+                  ]
+                }
+              }
+            ]
+            name "RF_HIP"
+            physics Physics {
+              density -1
+              mass 0.001
+              centerOfMass [
+                0 0 0
+              ]
+              inertiaMatrix [
+                1e-06 1e-06 1e-06
+                0 0 0
+              ]
+            }
+          }
+        }
+      ]
+      name "RF_HAA"
+      physics Physics {
+        density -1
+        mass 2.04
+        centerOfMass [
+          -0.063 7e-05 0.00046
+        ]
+        inertiaMatrix [
+          0.001053013 0.001805509 0.001765827
+          4.527e-05 8.855e-05 9.909e-05
+        ]
+      }
+    }
+    Solid {
+      translation -0.2999 0.104 0
+      rotation 0 0.965925849201117 -0.2588189595935754 3.141593
+      children [
+        USE drive_visual
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 4.025553503433583e-05
+            axis -1 0 0
+          }
+          device [
+            RotationalMotor {
+              name "LH_HAA"
+              maxVelocity 7.5
+              minPosition -0.72
+              maxPosition 0.49
+              maxTorque 80
+            }
+            PositionSensor {
+              name "LH_HAA_sensor"
+            }
+          ]
+          endPoint Solid {
+            rotation -1 0 0 4.025553591930157e-05
+            children [
+              Solid {
+                rotation 0 0.965925849201117 -0.2588189595935754 3.141593
+                children [
+                  Pose {
+                    rotation 0 0 -1 3.141593
+                    children [
+                      USE hip_r_visual
+                    ]
+                  }
+                  Solid {
+                    translation -0.0599 0.08381 0
+                    rotation 0 0 1 1.570796
+                    children [
+                      USE drive_visual
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position 3.619743908830614e-05
+                        }
+                        device [
+                          RotationalMotor {
+                            name "LH_HFE"
+                            maxVelocity 7.5
+                            minPosition -9.42477796077
+                            maxPosition 9.42477796077
+                            maxTorque 80
+                          }
+                          PositionSensor {
+                            name "LH_HFE_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          rotation 1 0 0 3.619744487711952e-05
+                          children [
+                            Solid {
+                              rotation 0 0 -1 1.570796
+                              children [
+                                USE thigh_visual
+                                Solid {
+                                  translation 0 0.1003 -0.285
+                                  rotation 0 0 1 1.570796
+                                  children [
+                                    USE drive_visual
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        position 1.6963420726202477e-05
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "LH_KFE"
+                                          maxVelocity 7.5
+                                          minPosition -9.42477796077
+                                          maxPosition 9.42477796077
+                                          maxTorque 80
+                                        }
+                                        PositionSensor {
+                                          name "LH_KFE_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        rotation 1 0 0 1.6963412790081183e-05
+                                        children [
+                                          Solid {
+                                            rotation 0 0 -1 1.570796
+                                            children [
+                                              Pose {
+                                                rotation 0 0 -1 3.141593
+                                                children [
+                                                  USE shank_r_visual
+                                                ]
+                                              }
+                                              Solid {
+                                                translation -0.08795 0.01305 -0.33797
+                                                children [
+                                                  Pose {
+                                                    rotation 0 0 -1 2.356194
+                                                    children [
+                                                      USE foot_visual
+                                                    ]
+                                                  }
+                                                ]
+                                                name "LH_FOOT"
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0 0 0.168985
+                                                      children [
+                                                        Cylinder {
+                                                          height 0.282504
+                                                          radius 0.0175
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0 0 0.0225
+                                                      children [
+                                                        Sphere {
+                                                          radius 0.03
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.25
+                                                  centerOfMass [
+                                                    -0.00948 -0.00948 0.1468
+                                                  ]
+                                                  inertiaMatrix [
+                                                    0.003171741 0.003171741 8.319196e-05
+                                                    -2.63048e-06 -6.815581e-05 6.815583e-05
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                            name "LH_shank_fixed"
+                                            boundingObject Group {
+                                              children [
+                                                Pose {
+                                                  translation 0 0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Cylinder {
+                                                      height 0.04
+                                                      radius 0.06
+                                                    }
+                                                  ]
+                                                }
+                                                Pose {
+                                                  translation -0.057499 0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Box {
+                                                      size 0.114998 0.0675 0.04
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                            physics Physics {
+                                              density -1
+                                              mass 0.33742
+                                              centerOfMass [
+                                                -0.03463 0.00688 0.00098
+                                              ]
+                                              inertiaMatrix [
+                                                0.0003274801 0.001109741 0.0008938852
+                                                -2.142561e-05 -1.33942e-05 7.601e-08
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                        name "LH_SHANK"
+                                        physics Physics {
+                                          density -1
+                                          mass 0.001
+                                          centerOfMass [
+                                            0 0 0
+                                          ]
+                                          inertiaMatrix [
+                                            1e-06 1e-06 1e-06
+                                            0 0 0
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "LH_KFE"
+                                  boundingObject Pose {
+                                    translation -0.07 0 0
+                                    rotation 0 1 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.14
+                                        radius 0.05
+                                      }
+                                    ]
+                                  }
+                                  physics Physics {
+                                    density -1
+                                    mass 2.04
+                                    centerOfMass [
+                                      -0.063 7e-05 0.00046
+                                    ]
+                                    inertiaMatrix [
+                                      0.001053013 0.001805509 0.001765827
+                                      4.527e-05 8.855e-05 9.909e-05
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "LH_thigh_fixed"
+                              boundingObject Group {
+                                children [
+                                  Pose {
+                                    translation 0 0.04 0
+                                    rotation 1 0 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.08
+                                        radius 0.065
+                                      }
+                                    ]
+                                  }
+                                  Pose {
+                                    translation 0 0.03 -0.141314
+                                    children [
+                                      Box {
+                                        size 0.075 0.06 0.282627
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 1.03
+                                centerOfMass [
+                                  0 0.018 -0.169
+                                ]
+                                inertiaMatrix [
+                                  0.01864447 0.0193126 0.002838361
+                                  -5.2e-08 -1.0157e-05 0.002520077
+                                ]
+                              }
+                            }
+                          ]
+                          name "LH_THIGH"
+                          physics Physics {
+                            density -1
+                            mass 0.001
+                            centerOfMass [
+                              0 0 0
+                            ]
+                            inertiaMatrix [
+                              1e-06 1e-06 1e-06
+                              0 0 0
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "LH_HFE"
+                    boundingObject Pose {
+                      translation -0.07 0 0
+                      rotation 0 1 0 1.570796
+                      children [
+                        Cylinder {
+                          height 0.14
+                          radius 0.05
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 2.04
+                      centerOfMass [
+                        -0.063 7e-05 0.00046
+                      ]
+                      inertiaMatrix [
+                        0.001053013 0.001805509 0.001765827
+                        4.527e-05 8.855e-05 9.909e-05
+                      ]
+                    }
+                  }
+                ]
+                name "LH_hip_fixed"
+                physics Physics {
+                  density -1
+                  mass 0.74
+                  centerOfMass [
+                    -0.048 0.008 -0.003
+                  ]
+                  inertiaMatrix [
+                    0.001393106 0.003798579 0.003897509
+                    -8.4012e-05 -2.3378e-05 7.1319e-05
+                  ]
+                }
+              }
+            ]
+            name "LH_HIP"
+            physics Physics {
+              density -1
+              mass 0.001
+              centerOfMass [
+                0 0 0
+              ]
+              inertiaMatrix [
+                1e-06 1e-06 1e-06
+                0 0 0
+              ]
+            }
+          }
+        }
+      ]
+      name "LH_HAA"
+      physics Physics {
+        density -1
+        mass 2.04
+        centerOfMass [
+          -0.063 7e-05 0.00046
+        ]
+        inertiaMatrix [
+          0.001053013 0.001805509 0.001765827
+          4.527e-05 8.855e-05 9.909e-05
+        ]
+      }
+    }
+    Solid {
+      translation -0.2999 -0.104 0
+      rotation 0 -0.965925849201117 -0.2588189595935754 3.141593
+      children [
+        USE drive_visual
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position -4.0957799242846704e-05
+            axis -1 0 0
+          }
+          device [
+            RotationalMotor {
+              name "RH_HAA"
+              maxVelocity 7.5
+              minPosition -0.49
+              maxPosition 0.72
+              maxTorque 80
+            }
+            PositionSensor {
+              name "RH_HAA_sensor"
+            }
+          ]
+          endPoint Solid {
+            rotation 1 0 0 4.0957803422506943e-05
+            children [
+              Solid {
+                rotation 0 -0.965925849201117 -0.2588189595935754 3.141593
+                children [
+                  Pose {
+                    rotation 0 0 -1 3.141593
+                    children [
+                      USE hip_l_visual
+                    ]
+                  }
+                  Solid {
+                    translation -0.0599 -0.08381 0
+                    rotation 0 0 -1 1.570796
+                    children [
+                      USE drive_visual
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position 3.593487304551636e-05
+                          axis -1 0 0
+                        }
+                        device [
+                          RotationalMotor {
+                            name "RH_HFE"
+                            maxVelocity 7.5
+                            minPosition -9.42477796077
+                            maxPosition 9.42477796077
+                            maxTorque 80
+                          }
+                          PositionSensor {
+                            name "RH_HFE_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          rotation -1 0 0 3.593487858626204e-05
+                          children [
+                            Solid {
+                              rotation 0 0 1 1.570796
+                              children [
+                                Pose {
+                                  rotation 0 0 -1 3.141593
+                                  children [
+                                    USE thigh_visual
+                                  ]
+                                }
+                                Solid {
+                                  translation 0 -0.1003 -0.285
+                                  rotation 0 0 -1 1.570796
+                                  children [
+                                    USE drive_visual
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        position 1.7025066971143245e-05
+                                        axis -1 0 0
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "RH_KFE"
+                                          maxVelocity 7.5
+                                          minPosition -9.42477796077
+                                          maxPosition 9.42477796077
+                                          maxTorque 80
+                                        }
+                                        PositionSensor {
+                                          name "RH_KFE_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        rotation -1 0 0 1.7025057602803807e-05
+                                        children [
+                                          Solid {
+                                            rotation 0 0 1 1.570796
+                                            children [
+                                              Pose {
+                                                rotation 0 0 -1 3.141593
+                                                children [
+                                                  USE shank_l_visual
+                                                ]
+                                              }
+                                              Solid {
+                                                translation -0.08795 -0.01305 -0.33797
+                                                children [
+                                                  Pose {
+                                                    rotation 0 0 -1 3.926991
+                                                    children [
+                                                      USE foot_visual
+                                                    ]
+                                                  }
+                                                ]
+                                                name "RH_FOOT"
+                                                boundingObject Group {
+                                                  children [
+                                                    Pose {
+                                                      translation 0 0 0.168985
+                                                      children [
+                                                        Cylinder {
+                                                          height 0.282504
+                                                          radius 0.0175
+                                                        }
+                                                      ]
+                                                    }
+                                                    Pose {
+                                                      translation 0 0 0.0225
+                                                      children [
+                                                        Sphere {
+                                                          radius 0.03
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.25
+                                                  centerOfMass [
+                                                    -0.00948 0.00948 0.1468
+                                                  ]
+                                                  inertiaMatrix [
+                                                    0.003171741 0.003171741 8.319196e-05
+                                                    2.63048e-06 -6.815581e-05 -6.815583e-05
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                            name "RH_shank_fixed"
+                                            boundingObject Group {
+                                              children [
+                                                Pose {
+                                                  translation 0 -0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Cylinder {
+                                                      height 0.04
+                                                      radius 0.06
+                                                    }
+                                                  ]
+                                                }
+                                                Pose {
+                                                  translation -0.057499 -0.02 0
+                                                  rotation 1 0 0 1.570796
+                                                  children [
+                                                    Box {
+                                                      size 0.114998 0.0675 0.04
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                            physics Physics {
+                                              density -1
+                                              mass 0.33742
+                                              centerOfMass [
+                                                -0.03463 -0.00688 0.00098
+                                              ]
+                                              inertiaMatrix [
+                                                0.0003274801 0.001109741 0.0008938852
+                                                2.142561e-05 -1.33942e-05 -7.601e-08
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                        name "RH_SHANK"
+                                        physics Physics {
+                                          density -1
+                                          mass 0.001
+                                          centerOfMass [
+                                            0 0 0
+                                          ]
+                                          inertiaMatrix [
+                                            1e-06 1e-06 1e-06
+                                            0 0 0
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "RH_KFE"
+                                  boundingObject Pose {
+                                    translation -0.07 0 0
+                                    rotation 0 1 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.14
+                                        radius 0.05
+                                      }
+                                    ]
+                                  }
+                                  physics Physics {
+                                    density -1
+                                    mass 2.04
+                                    centerOfMass [
+                                      -0.063 7e-05 0.00046
+                                    ]
+                                    inertiaMatrix [
+                                      0.001053013 0.001805509 0.001765827
+                                      4.527e-05 8.855e-05 9.909e-05
+                                    ]
+                                  }
+                                }
+                              ]
+                              name "RH_thigh_fixed"
+                              boundingObject Group {
+                                children [
+                                  Pose {
+                                    translation 0 -0.04 0
+                                    rotation 1 0 0 1.570796
+                                    children [
+                                      Cylinder {
+                                        height 0.08
+                                        radius 0.065
+                                      }
+                                    ]
+                                  }
+                                  Pose {
+                                    translation 0 -0.03 -0.141314
+                                    children [
+                                      Box {
+                                        size 0.075 0.06 0.282627
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                              physics Physics {
+                                density -1
+                                mass 1.03
+                                centerOfMass [
+                                  0 -0.018 -0.169
+                                ]
+                                inertiaMatrix [
+                                  0.01864447 0.0193126 0.002838361
+                                  5.2e-08 -1.0157e-05 -0.002520077
+                                ]
+                              }
+                            }
+                          ]
+                          name "RH_THIGH"
+                          physics Physics {
+                            density -1
+                            mass 0.001
+                            centerOfMass [
+                              0 0 0
+                            ]
+                            inertiaMatrix [
+                              1e-06 1e-06 1e-06
+                              0 0 0
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "RH_HFE"
+                    boundingObject Pose {
+                      translation -0.07 0 0
+                      rotation 0 1 0 1.570796
+                      children [
+                        Cylinder {
+                          height 0.14
+                          radius 0.05
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 2.04
+                      centerOfMass [
+                        -0.063 7e-05 0.00046
+                      ]
+                      inertiaMatrix [
+                        0.001053013 0.001805509 0.001765827
+                        4.527e-05 8.855e-05 9.909e-05
+                      ]
+                    }
+                  }
+                ]
+                name "RH_hip_fixed"
+                physics Physics {
+                  density -1
+                  mass 0.74
+                  centerOfMass [
+                    -0.048 -0.008 -0.003
+                  ]
+                  inertiaMatrix [
+                    0.001393106 0.003798579 0.003897509
+                    8.4012e-05 -2.3378e-05 -7.1319e-05
+                  ]
+                }
+              }
+            ]
+            name "RH_HIP"
+            physics Physics {
+              density -1
+              mass 0.001
+              centerOfMass [
+                0 0 0
+              ]
+              inertiaMatrix [
+                1e-06 1e-06 1e-06
+                0 0 0
+              ]
+            }
+          }
+        }
+      ]
+      name "RH_HAA"
+      physics Physics {
+        density -1
+        mass 2.04
+        centerOfMass [
+          -0.063 7e-05 0.00046
+        ]
+        inertiaMatrix [
+          0.001053013 0.001805509 0.001765827
+          4.527e-05 8.855e-05 9.909e-05
+        ]
+      }
+    }
+    Solid {
+      children [
+        Pose {
+          translation 0.116 0 0.073
+          children [
+            DEF hatch_visual CadShape {
+              url [
+                "C:/Users/28274/Desktop/bramble/Ragtime_BrambleBot/Simulation/Webots/bramblebot/protos/meshes/hatch.dae"
+              ]
+            }
+          ]
+        }
+      ]
+      name "hatch"
+      physics Physics {
+        density -1
+        mass 0.142
+        centerOfMass [
+          0.116 0 0.0758
+        ]
+        inertiaMatrix [
+          0.001 0.001 0.001
+          0.001 0.001 0.001
+        ]
+      }
+    }
+  ]
+  name "anymal"
+  boundingObject Group {
+    children [
+      Box {
+        size 0.58 0.14 0.18
+      }
+      Pose {
+        translation 0.2175 0.07 0
+        rotation 0 1 0 1.570796
+        children [
+          Cylinder {
+            height 0.145
+            radius 0.09
+          }
+        ]
+      }
+      Pose {
+        translation -0.2175 0.07 0
+        rotation 0 1 0 1.570796
+        children [
+          Cylinder {
+            height 0.145
+            radius 0.09
+          }
+        ]
+      }
+      Pose {
+        translation 0.2175 -0.07 0
+        rotation 0 1 0 1.570796
+        children [
+          Cylinder {
+            height 0.145
+            radius 0.09
+          }
+        ]
+      }
+      Pose {
+        translation -0.2175 -0.07 0
+        rotation 0 1 0 1.570796
+        children [
+          Cylinder {
+            height 0.145
+            radius 0.09
+          }
+        ]
+      }
+    ]
+  }
+  physics Physics {
+  }
+  controller "<extern>"
+}
